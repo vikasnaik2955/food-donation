@@ -1,5 +1,6 @@
 package com.dfs.donor_food_serivce.dto;
 
+import com.dfs.donor_food_serivce.enums.DonorStatus;
 import com.dfs.donor_food_serivce.enums.DonorType;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -21,4 +22,6 @@ public class DonorRequest {
     private String location;
 
     private DonorType type;
+
+    private DonorStatus status;
 }

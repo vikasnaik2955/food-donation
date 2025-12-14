@@ -29,8 +29,7 @@ public class DonorServiceImpl implements DonorService {
                 .contact(request.getContact())
                 .email(request.getEmail())
                 .location(request.getLocation())
-                .types(request.getType())
-                .totalRewards(0)
+                .type(request.getType())
                 .build();
 
         donor = donorRepository.save(donor);
@@ -56,12 +55,12 @@ public class DonorServiceImpl implements DonorService {
     private DonorResponseDTO toResponse(Donor donor) {
 
             DonorResponseDTO res = new DonorResponseDTO();
-            res.setId(donor.getId());
+            res.setId(donor.getId().toString());
             res.setName(donor.getName());
             res.setContact(donor.getContact());
             res.setEmail(donor.getEmail());
             res.setLocation(donor.getLocation());
-            res.setType(donor.getTypes());
+            res.setType(donor.getType());
             res.setTotalRewards(donor.getTotalRewards());
             res.setStatus(donor.getStatus());
             return res;

@@ -10,7 +10,7 @@ import java.util.UUID;
 @Data
 public class DonorResponseDTO {
 
-    private UUID id;
+    private String id;
     private String name;
     private String contact;
     private String email;

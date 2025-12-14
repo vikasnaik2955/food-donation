@@ -27,13 +27,21 @@ public class Donor extends BaseEntity{
     private String location;
 
     @Enumerated(EnumType.STRING)
-    private DonorType types;
+    private DonorType type;
 
     private int totalRewards;
 
     @Enumerated(EnumType.STRING)
-    private DonorStatus status = DonorStatus.ACTIVE;
+    private DonorStatus status;
 
 //    @OneToMany(mappedBy = "donor")
 //    private List<FoodAvailable> foodAvailableList;
+
+
+    @PrePersist
+    public void prePersist() {
+            status = DonorStatus.ACTIVE;
+            totalRewards = 0;
+    }
+
 }

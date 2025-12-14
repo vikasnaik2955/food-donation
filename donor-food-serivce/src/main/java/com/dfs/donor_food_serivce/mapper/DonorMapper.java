@@ -9,12 +9,12 @@ public class DonorMapper {
         DonorResponseDTO donorResponseDTO = new DonorResponseDTO();
 
         donorResponseDTO.setEmail(donor.getEmail());
-        donorResponseDTO.setId(donor.getId());
+        donorResponseDTO.setId(donor.getId().toString());
         donorResponseDTO.setLocation(donor.getLocation());
         donorResponseDTO.setName(donor.getName());
         donorResponseDTO.setStatus(donor.getStatus());
         donorResponseDTO.setTotalRewards(donor.getTotalRewards());
-        donorResponseDTO.setType(donor.getTypes());
+        donorResponseDTO.setType(donor.getType());
      return donorResponseDTO;
     }
 }
