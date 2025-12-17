@@ -2,6 +2,7 @@ package com.dfs.donor_food_serivce.dto;
 
 
 import com.dfs.donor_food_serivce.enums.AllocationStatus;
+import com.dfs.donor_food_serivce.enums.FoodAvailableStatus;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -16,5 +17,6 @@ public class FoodAvailableResponse {
     private Integer noOfPeople;
     private String location;
     private AllocationStatus status;
+    private FoodAvailableStatus foodAvailableStatus;
     private LocalDateTime createdAt;
 }
