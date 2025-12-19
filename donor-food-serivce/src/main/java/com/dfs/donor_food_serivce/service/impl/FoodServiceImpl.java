@@ -5,10 +5,12 @@ import com.dfs.donor_food_serivce.dto.FoodAvailableResponse;
 import com.dfs.donor_food_serivce.entity.FoodAvailable;
 import com.dfs.donor_food_serivce.repository.FoodAvailableRepository;
 import com.dfs.donor_food_serivce.service.FoodService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
 
+@Service
 public class FoodServiceImpl implements FoodService {
 
     private final FoodAvailableRepository foodRepo;
@@ -22,9 +24,9 @@ public class FoodServiceImpl implements FoodService {
                 .donorId(request.getDonorId())
                 .description(request.getDescription())
                 .noOfPeople(request.getNoOfPeople())
-                .location(request.getLocation())
+                .pickupLocation(request.getLocation())
                 .preparedAt(request.getPreparedAt())
-                .expiryAt(request.getExpiryAt())
+                .expiryTime(request.getExpiryAt())
                 .evidenceURL(request.getEvidenceUrl())
                 .build();
 
@@ -38,8 +40,9 @@ public class FoodServiceImpl implements FoodService {
         res.setDonorId(fa.getDonorId());
         res.setDescription(fa.getDescription());
         res.setNoOfPeople(fa.getNoOfPeople());
-        res.setLocation(fa.getLocation());
-        res.setStatus(fa.getStatus());
+        res.setLocation(fa.getPickupLocation());
+        res.setFoodAvailableStatus(fa.getStatus());
+        res.setStatus(fa.getAllocationStatus());
         res.setCreatedAt(fa.getCreatedAt());
         return res;
 
