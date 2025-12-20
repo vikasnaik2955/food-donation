@@ -1,0 +1,30 @@
+server:
+  port: 8083   # choose a unique port for logistics-service
+
+spring:
+  application:
+    name: logistics-service
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/logistics_services?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+
+
+  sql:
+    init:
+      mode: never
+
+# Disable Eureka during local dev/tests if needed
+eureka:
+  client:
+    enabled: false
