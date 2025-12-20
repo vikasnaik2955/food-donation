@@ -32,8 +32,8 @@ public class FoodAvailable extends BaseEntity {
     /**
      * Quantity of food items (optional)
      */
-    @Column(nullable = false)
-    private int quantity;
+//    @Column(nullable = false)
+//    private int quantity;
 
     /**
      * Number of people this food can serve

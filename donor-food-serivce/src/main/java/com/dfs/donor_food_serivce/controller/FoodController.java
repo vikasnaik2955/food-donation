@@ -46,4 +46,25 @@ public class FoodController {
 
         return ResponseEntity.ok(foodService.getFoodByDonor(donorId));
     }
+    // ✅ UPDATE FOOD
+    @PutMapping("/{id}")
+    public ResponseEntity<FoodAvailableResponse> updateFood(
+            @PathVariable UUID id,
+            @Valid @RequestBody FoodAvailableRequestDTO request) {
+
+        return ResponseEntity.ok(foodService.updateFood(id, request));
+    }
+    @PatchMapping("/{id}/cancel")
+    public ResponseEntity<Void> cancelFood(@PathVariable UUID id) {
+
+        foodService.cancelFood(id);
+        return ResponseEntity.noContent().build();
+    }
+    // ✅ GET ALL AVAILABLE FOOD
+    @GetMapping
+    public ResponseEntity<List<FoodAvailableResponse>> getAllFood() {
+
+        return ResponseEntity.ok(foodService.getAllAvailableFood());
+    }
+
 }
