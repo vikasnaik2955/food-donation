@@ -2,6 +2,7 @@ package com.dfs.donor_food_serivce.repository;
 
 import com.dfs.donor_food_serivce.entity.FoodAvailable;
 import com.dfs.donor_food_serivce.enums.AllocationStatus;
+import com.dfs.donor_food_serivce.enums.FoodAvailableStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
@@ -11,5 +12,5 @@ public interface FoodAvailableRepository extends JpaRepository<FoodAvailable, UU
 
     List<FoodAvailable> findByDonorId(UUID donorId);
 
-    List<FoodAvailable> findByStatus(AllocationStatus status);
+    List<FoodAvailable> findByStatus(FoodAvailableStatus status);
 }

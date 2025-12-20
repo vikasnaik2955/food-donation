@@ -14,4 +14,11 @@ public interface FoodService {
     List<FoodAvailableResponse> getFoodByDonor(UUID donorId);
 
     FoodAvailableResponse getFood(UUID id);
+
+    FoodAvailableResponse updateFood(UUID foodId, FoodAvailableRequestDTO request);
+
+    void cancelFood(UUID foodId);
+    
+    List<FoodAvailableResponse> getAllAvailableFood();
+
 }
